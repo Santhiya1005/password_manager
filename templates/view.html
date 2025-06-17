@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decrypted Passwords</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>🔐 Decrypted Passwords</h2>
+    <table border="1">
+        <tr><th>Website</th><th>Username</th><th>Password</th></tr>
+        {% for w, u, p in passwords %}
+        <tr>
+            <td>{{ w }}</td>
+            <td>{{ u }}</td>
+            <td>{{ p }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/logout">🔒 Logout</a>
+</body>
+</html>

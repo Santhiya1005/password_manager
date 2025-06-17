@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Password Manager</h1>
+
+    <form action="/add" method="post" autocomplete="off">
+    <input type="text" name="website" placeholder="Website" required autocomplete="off">
+    <input type="text" name="username" placeholder="Username" required autocomplete="off">
+    <input type="password" name="password" placeholder="Password" required autocomplete="new-password">
+    <button type="submit">Add</button>
+    </form>
+
+
+    <h2>Saved Passwords</h2>
+    <p style="text-align: center; color: #555;">
+    🔒 Double click on password to view it temporarily
+</p>
+
+    <table border="1" style="margin: auto; margin-top: 20px;">
+        <tr>
+            <th>Website</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Action</th> <!-- Added column for delete -->
+        </tr>
+        {% for row in passwords %}
+        <tr>
+            <td>{{ row[1] }}</td> <!-- website -->
+            <td>{{ row[2] }}</td> <!-- username -->
+            <td data-id="{{ row[0] }}" ondblclick="promptUnlock(this, '{{ row[0] }}')">•••••• (double click to view)</td>
+            <td>
+                <form action="/delete/{{ row[0] }}" method="POST" onsubmit="return confirm('Are you sure to delete this entry?');">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form action="/logout" method="GET" style="text-align: right;">
+    <button type="submit" style="background-color: red; color: white; padding: 5px 10px; border: none;">Logout</button>
+    </form>
+
+    <script>
+        function promptUnlock(cell, rowId) {
+            const username = prompt("Enter username:");
+            const master = prompt("Enter master password:");
+
+            if (!username || !master) return;
+
+            fetch('/decrypt', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: rowId,
+                    username: username,
+                    master: master
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    cell.innerText = data.password;
+
+                    // Hide again after 30 seconds
+                    setTimeout(() => {
+                        cell.innerText = "•••••• (double click to view)";
+                    }, 10000);
+                } else {
+                    alert("❌ " + data.message);
+                }
+            })
+            .catch(err => {
+                alert("⚠️ Request failed. Check console.");
+                console.error(err);
+            });
+        }
+    </script>
+
+</body>
+</html>

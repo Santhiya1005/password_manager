@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <h2>🔐 Unlock Access</h2>
+        <form method="POST" action="/unlock" autocomplete="off">
+            <input type="password" name="masterpassword" placeholder="Enter Master Password" required autocomplete="new-password">
+            <button type="submit">Unlock</button>
+        </form>
+    </div>
+</body>
+</html>

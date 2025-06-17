@@ -1,0 +1,152 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #fdfbfb, #ebedee);
+    color: #333;
+    text-align: center;
+    padding: 30px;
+}
+
+/* Header */
+h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #34495e;
+    margin-top: 40px;
+}
+
+/* Form Styling */
+form {
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    width: 30%;
+    margin: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+}
+
+button {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #219150;
+}
+
+/* Table Styling */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 18px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover td {
+    background-color: #ecf0f1;
+    cursor: pointer;
+}
+
+/* Logout link */
+.logout {
+    text-align: right;
+    margin-right: 40px;
+}
+
+.logout a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout a:hover {
+    text-decoration: underline;
+}
+/* Login Page Styling */
+.login-page {
+    background: url("/static/key-bg.avif") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 24px;
+}
+
+.login-container input[type="password"] {
+    padding: 10px;
+    width: 80%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.login-container button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.login-container button:hover {
+    background-color: #1e8449;
+}
