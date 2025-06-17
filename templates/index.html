@@ -6,8 +6,8 @@
 </head>
 <body>
     <h1>Password Manager</h1>
-
-    <form action="/add" method="post" autocomplete="off">
+    <h4>Enter your Info</h4>
+    <form class="y" action="/add" method="post" autocomplete="off">
     <input type="text" name="website" placeholder="Website" required autocomplete="off">
     <input type="text" name="username" placeholder="Username" required autocomplete="off">
     <input type="password" name="password" placeholder="Password" required autocomplete="new-password">
@@ -40,8 +40,8 @@
         </tr>
         {% endfor %}
     </table>
-    <form action="/logout" method="GET" style="text-align: right;">
-    <button type="submit" style="background-color: red; color: white; padding: 5px 10px; border: none;">Logout</button>
+    <form action="/logout" method="GET" >
+    <button class="yes" type="submit">Logout</button>
     </form>
 
     <script>

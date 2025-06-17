@@ -1,26 +1,24 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #fdfbfb, #ebedee);
+    background: linear-gradient(to right, hsl(222, 14%, 86%), rgb(37, 108, 190));
     color: #333;
     text-align: center;
     padding: 30px;
 }
 
-/* Header */
 h1 {
-    color: #2c3e50;
+    color: rgba(46, 34, 34, 0.877);
     font-size: 2.5em;
     margin-bottom: 10px;
 }
 
 h2 {
-    color: #34495e;
+    color: rgba(46, 34, 34, 0.877);
     margin-top: 40px;
 }
 
-/* Form Styling */
-form {
-    background: #ffffff;
+.y{
+    background: #edeaea;
     padding: 20px;
     margin: 20px auto;
     width: 60%;
@@ -29,22 +27,17 @@ form {
 }
 
 input[type="text"], input[type="password"] {
-    padding: 10px;
-    width: 30%;
-    margin: 8px;
-    border: 1px solid #ccc;
+    padding: 15px;
+    width: 20%;
+    margin: 10px;
+    border: 1px solid #62695a;
     border-radius: 8px;
     outline: none;
     transition: 0.3s ease-in-out;
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
-    border-color: #2980b9;
-    box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
-}
-
 button {
-    background-color: #27ae60;
+    background-color: #31b367;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -55,22 +48,21 @@ button {
 }
 
 button:hover {
-    background-color: #219150;
+    background-color: #3a74cc;
 }
 
-/* Table Styling */
 table {
     width: 80%;
     margin: 20px auto;
     border-collapse: collapse;
-    background: #ffffff;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: edeaea;
 }
 
 th, td {
-    padding: 12px 18px;
+    padding: 37px 18px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -81,15 +73,21 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+        background:white;
+
+}
+tr:nth-child(odd) {
+        background: white;
+
 }
 
 tr:hover td {
-    background-color: #ecf0f1;
+    background-color:whitesmoke;
     cursor: pointer;
 }
-
-/* Logout link */
+.yes{
+    background-color:red;
+}
 .logout {
     text-align: right;
     margin-right: 40px;
