@@ -20,12 +20,11 @@ Encryption: Fernet (from `cryptography` library)
 1.https://github.com/yourusername/password-manager.git
 2.pip install flask cryptography
 3. Generate Encryption Key (Only once)
-
-```python
 from cryptography.fernet import Fernet
 key = Fernet.generate_key()
 with open("secret.key", "wb") as f:
     f.write(key)
+
 4.python app.py - Run the application in local host.
 
 **Author**
