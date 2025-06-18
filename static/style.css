@@ -148,3 +148,11 @@ tr:hover td {
 .login-container button:hover {
     background-color: #1e8449;
 }
+.text{
+    margin-bottom: 20px; 
+    text-align: center; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;">
+
+}

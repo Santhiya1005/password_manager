@@ -27,16 +27,28 @@ def init_db():
 init_db()
 
 @app.route("/")
+@app.route("/")
 def home():
     if 'user' not in session:
         return redirect('/unlock')
 
+    query = request.args.get('query', '')
+
     conn = sqlite3.connect("passwords.db")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM passwords")
+
+    if query:
+        cur.execute("""
+            SELECT * FROM passwords 
+            WHERE LOWER(website) LIKE LOWER(?) OR LOWER(username) LIKE LOWER(?)
+        """, ('%' + query + '%', '%' + query + '%'))
+    else:
+        cur.execute("SELECT * FROM passwords")
+
     data = cur.fetchall()
     conn.close()
-    return render_template("index.html", passwords=data)
+
+    return render_template("index.html", passwords=data, query=query)
 
 @app.route("/add", methods=["POST"])
 def add_password():
@@ -66,9 +78,18 @@ def unlock():
             return "Incorrect Master Password"
     return render_template('login.html')  # ✅ Shows login page on GET
 
+@app.route("/search", methods=["GET"])
+def search():
+    query = request.args.get("q", "").lower()
+    
+    conn = sqlite3.connect("passwords.db")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM passwords WHERE LOWER(website) LIKE ? OR LOWER(username) LIKE ?", 
+                ('%' + query + '%', '%' + query + '%'))
+    results = cur.fetchall()
+    conn.close()
 
-
-
+    return jsonify(results)
 
 @app.route('/view')
 def view():
