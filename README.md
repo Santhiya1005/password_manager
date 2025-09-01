@@ -17,17 +17,16 @@ Database: SQLite
 Encryption: Fernet (from `cryptography` library)
 
 # Getting Started
-1.https://github.com/yourusername/password-manager.git
-2.pip install flask cryptography
-3. Generate Encryption Key (Only once)
+1..pip install flask cryptography
+2. Generate Encryption Key (Only once)
 from cryptography.fernet import Fernet
 key = Fernet.generate_key()
 with open("secret.key", "wb") as f:
     f.write(key)
-
-4.python app.py - Run the application in local host.
+3.python app.py - Run the application in local host.
 
 **Author**
 Santhiya Suresh
 B.Tech AI & Data Science | Full Stack Developer | Python Enthusiast
 GitHub: Santhiya1005 | Email: sureshsanthiya613@gmail.com
+
