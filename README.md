@@ -1,32 +1,80 @@
-# Password Manager
-A secure and user-friendly web-based Password Manager built using Flask, SQLite, and Python Cryptography. This application allows users to store, retrieve, and manage login credentials securely using encryption and a master authentication system.
+Password Manager 🔐
 
-# Features
-* Master Password Authentication - Access to the app is protected with a master password.
-* Add Credentials - Store website login details including website name, username, and password.
-* Encrypted Storage - Passwords are encrypted using Fernet symmetric encryption before being saved.
-* View Passwords on Request - Passwords are revealed temporarily after verifying the master password and username. The fuction will run for 10 secs defaulty to decrpt the password using node.js.
-* Live Search - Instantly search for entries based on website or username.
-* Delete Entries - Remove stored credentials easily and securely.
-* Session-Based Access Control - Prevents unauthorized access through session management.
+A secure and user-friendly web-based Password Manager built with Flask, SQLite, and Python Cryptography.
+It allows users to store, retrieve, and manage login credentials securely with encryption and a master authentication system.
 
-# Technologies Used
-Frontend: HTML5, CSS3, JavaScript  
-Backend: Python (Flask Framework)  
-Database: SQLite  
-Encryption: Fernet (from `cryptography` library)
+📌 Features
 
-# Getting Started
-1..pip install flask cryptography
-2. Generate Encryption Key (Only once)
-from cryptography.fernet import Fernet
-key = Fernet.generate_key()
-with open("secret.key", "wb") as f:
-    f.write(key)
-3.python app.py - Run the application in local host.
+Master Password Authentication – Secure access using a master password.
 
-**Author**
+Add & Store Credentials – Save website, username, and password securely.
+
+Encrypted Storage – Passwords encrypted using Fernet (symmetric encryption).
+
+Unlock & View Passwords – Decrypt and view credentials temporarily after verification.
+
+Session Management – Prevents unauthorized access.
+
+Delete Credentials – Remove saved credentials securely.
+
+Live Search – Search instantly for credentials like Google-type search (typeahead).
+
+🛠️ Project Structure
+Password-Manager/
+│── static/                 # CSS, JavaScript files
+│── templates/              # HTML templates
+│   ├── index.html          # Dashboard / Home
+│   ├── login.html          # Master password login page
+│   ├── unlock.html         # Unlock credentials page
+│   └── view.html           # View decrypted password
+│── app.py                  # Flask application
+│── generate_key.py         # Generate encryption key (secret.key)
+│── passwords.db            # SQLite database
+│── secret.key              # Fernet encryption key (DO NOT share)
+│── README.md               # Documentation
+
+🚀 Getting Started
+1. Clone the repo
+git clone https://github.com/yourusername/password-manager.git
+cd password-manager
+
+2. Install dependencies
+pip install flask cryptography
+
+3. Generate encryption key
+python generate_key.py
+
+
+This creates secret.key file used for encrypting/decrypting credentials.
+
+4. Run the application
+python app.py
+
+
+The app runs on http://127.0.0.1:5000/
+ by default.
+
+🔎 Live Search (Typeahead)
+
+The app supports Google-like live search where users can type a website/username and instantly see results.
+
+Built with JavaScript debounce on the frontend.
+
+Backend provides a /search API endpoint (Flask + SQLite).
+
+Results update in real time.
+
+⚠️ Security Notes
+
+Keep secret.key safe (add it to .gitignore).
+
+Master password should be hashed (e.g., bcrypt/argon2) instead of plain text.
+
+Always run on HTTPS in production.
+
+Database should not be exposed directly.
+
+👩‍💻 Author
+
 Santhiya Suresh
 B.Tech AI & Data Science | Full Stack Developer | Python Enthusiast
-GitHub: Santhiya1005 | Email: sureshsanthiya613@gmail.com
-
