@@ -1,6 +1,4 @@
 Flask
-Flask-Cors
-Werkzeug
+gunicorn
+cryptography
 python-dotenv
-bcrypt
-pymongo
