@@ -44,11 +44,10 @@ This creates secret.key used for encrypting/decrypting credentials.
 python app.py
 The app runs on http://127.0.0.1:5000/   by default.
 
-## ----------------------------------------------------------------------------------------------------------------------------------
-Demo Access - You can try the app using the demo master password:
-Mater Password: admin123 
+## Demo Access
+You can try the app using the demo master password:
+* Mater Password: admin123 
 Note: This is only for demo purposes. For real usage, set your own secure master password.
--------------------------------------------------------------------------------------------------------------------------------------
 
 ## Live Search (Typeahead)
 
@@ -64,10 +63,8 @@ Note: This is only for demo purposes. For real usage, set your own secure master
 * Always run the app over HTTPS in production.
 * The database (passwords.db) should not be exposed directly.
 
-## ----------------------------------------------------------------------------------------------------------------------------------
 ## Live Demo
 https://passwordmanager-6plj.onrender.com
-## ----------------------------------------------------------------------------------------------------------------------------------
 
 ## Technologies Used
 
@@ -79,4 +76,5 @@ https://passwordmanager-6plj.onrender.com
 HTML, CSS, JavaScript
 
 Gunicorn (Deployment)
+
 
