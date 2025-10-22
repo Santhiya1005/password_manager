@@ -46,7 +46,9 @@ The app runs on http://127.0.0.1:5000/   by default.
 
 ## Demo Access
 You can try the app using the demo master password:
-* Mater Password: admin123 
+
+Mater Password: admin123 
+
 Note: This is only for demo purposes. For real usage, set your own secure master password.
 
 ## Live Search (Typeahead)
@@ -76,5 +78,6 @@ https://passwordmanager-6plj.onrender.com
 HTML, CSS, JavaScript
 
 Gunicorn (Deployment)
+
 
 
