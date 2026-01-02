@@ -11,22 +11,7 @@ It allows users to store, retrieve, and manage login credentials securely with e
 * Unlock & View Passwords – Decrypt and view credentials temporarily after verification.
 * Session Management – Prevents unauthorized access.
 * Delete Credentials – Remove saved credentials securely.
-* Live Search (Typeahead) – Instant search for credentials like Google search.
-
-## Project Structure
-Password-Manager/
-│── static/                 
-│── templates/              
-│   ├── index.html        
-│   ├── login.html        
-│   ├── unlock.html        
-│   └── view.html          
-│── app.py                  
-│── generate_key.py        
-│── passwords.db           
-│── secret.key             
-│── README.md              
-│── requirements.txt      
+* Live Search (Typeahead) – Instant search for credentials like Google search.    
 
 ## Getting Started
 1. Clone the repository
@@ -58,13 +43,6 @@ Note: This is only for demo purposes. For real usage, set your own secure master
 * Backend provides a /search API endpoint (Flask + SQLite).
 * Results update in real time.
 
-## Security Notes
-
-* Keep secret.key safe (add it to .gitignore).
-* Master password should ideally be hashed with bcrypt or argon2.
-* Always run the app over HTTPS in production.
-* The database (passwords.db) should not be exposed directly.
-
 ## Live Demo
 https://passwordmanager-6plj.onrender.com
 
@@ -78,6 +56,7 @@ https://passwordmanager-6plj.onrender.com
 HTML, CSS, JavaScript
 
 Gunicorn (Deployment)
+
 
 
 
